@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #6D0D53;
+    color:#F9B950
+}
+
+.navbar-custom {
+    background-color: #490938;
+}
+
+.navbar-custom .nav-link {
+    color: #F9B950;
+    font-size: 2rem;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #C0690C;
+}
+
+.navbar-custom .navbar-brand {
+    color: #F9B950;
+    font-size: 2.5rem;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #C0690C;
+}
+
+.home-container {
+    height: calc(100vh - 86px); 
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.home-container a {
+    border-radius: 40px;
+    font-size: 50px;
+    height: 80px;
+}
+
+.input-row {
+    align-items: flex-end;
+}
+
+.group-input {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-control {
+    background-color: #490938;
+    border: #490938;
+    border-radius: 30px;
+    color: #F9B950;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.form-control:focus {
+    background-color: #490938;
+    border: 2px solid #3C907B;
+    box-shadow: none;
+    color: #F9B950;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #F9B950;
+    opacity: 0.5;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.2rem; 
+}
+
+.table tr {
+    border-bottom: 1px solid #56B9A1;
+}
+
+.table th, .table td {
+    color: #F9B950;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    background-color: #56B9A1;
+    border: none;
+    border-radius: 30px;
+    color: #6D0D53;
+    cursor: pointer;
+    padding: 0px 20px;
+    text-decoration: none;
+    text-align: center;
+    height: 50px;
+}
+
+.action-btn:hover {
+    background-color: #36816F;
+    color: #C0690C;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.popup {
+    color: #F9B950;
+    display: none; 
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #6D0D53;
+    border: 1px solid #490938;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.overlay {
+    display: none; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

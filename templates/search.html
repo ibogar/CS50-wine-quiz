@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form action="/search_results" autocomplete="off" class="d-flex flex-column" method="POST">
+            <label class="my-2" for="question">Question</label>
+            <div class="input-row d-flex mb-3">
+                <input autofocus class="form-control" type="text" id="question" name="question" placeholder="Which question do you need answered?" required>
+                <button class="action-btn" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <p id="popup-message"></p>
+    <button class="action-btn" onclick="closePopup()">Ok</button>
+</div>
+
+<script>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            let message = "";
+            {% for category, message in messages %}
+                message += "{{ message|safe }}\n";  
+            {% endfor %}
+            showPopup(message);  
+        {% endif %}
+    {% endwith %}
+</script>
+{% endblock %}

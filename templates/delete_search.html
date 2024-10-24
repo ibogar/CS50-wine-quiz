@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Delete question
+{% endblock %}
+
+{% block main %}
+<form action="">
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result["question"] }}</td>
+            <td>{{ result["answer"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="/delete_question">Return</a>
+    <button type="submit">Delete</button>
+</form>
+
+{% endblock %}

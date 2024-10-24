@@ -1,0 +1,57 @@
+wine quiz
+
+serão 5 páginas: página inicial, pesquisa, resultado da pesquisa, inclusão de perguntas, excluir perguntas
+database com sqlite
+
+
+página inicial
+
+botões para as outras páginas
+	search
+	new question
+	delete question
+layout diferente das outras páginas com os botões centralizados no centro da tela
+
+
+pesquisa
+
+campo de texto para digitar a pesquisa (obrigatório)
+	deixar funcional de forma que possa pesquisar por qualquer palavra no meio da pergunta
+botão para enviar o formulário
+layout base com botões para as páginas no topo
+
+resultado da pesquisa
+
+exibe tabela com o resultado da pesquisa
+	colunas: question // answer
+layout base com botões para as páginas no topo
+
+inclusão de perguntas
+campo de texto para digitar a pergunta (obrigatório)
+campo de texto para digitar a resposta (obrigatório)
+botão para enviar o formulário
+
+exclusão de perguntas (definir se vai ser uma página ou um botão na página de pesquisa)
+se for página:
+campo de texto para pesquisar pergunta
+botão para enviar
+exibir tabela abaixo da pesquisa
+botão para excluir pergunta
+
+talvez fazer página de atualização de perguntas (com botão na página de pesquisa que redirecione para a edição)
+
+
+DATABASE
+
+1 tabela apenas (quiz)
+colunas:
+id
+question, não repetir
+answer
+
+CREATE TABLE quiz (
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+question TEXT NOT NULL UNIQUE,
+answer TEXT NOT NULL,
+ascii_question TEXT NOT NULL UNIQUE
+);

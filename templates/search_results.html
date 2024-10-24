@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+        <form action="/search" method="POST">
+            <table class="table centered-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td><input type="radio" name="selected_question" value="{{ result['id'] }}"></td>
+                        <td>{{ result["question"] }}</td>
+                        <td>{{ result["answer"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            <div class="button-container mt-3">
+                <a class="action-btn" href="/search">Return</a>
+                <button class="action-btn" type="submit">Delete question</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
