@@ -31,8 +31,8 @@ def search():
 @app.route("/search_results", methods=["GET", "POST"])
 def search_results():
     if request.method == "POST":
-        search_paramether = ascii_string(request.form.get("question"))
-        results = db.execute("SELECT id, question, answer FROM quiz WHERE ascii_question LIKE ?", ("%" + search_paramether + "%"))
+        search_parameter = ascii_string(request.form.get("question"))
+        results = db.execute("SELECT id, question, answer FROM quiz WHERE ascii_question LIKE ?", ("%" + search_parameter + "%"))
         if results:
             return render_template("search_results.html", results=results)
         
